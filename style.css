@@ -1,56 +1,94 @@
-/* GLOBAL */
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: "Segoe UI", sans-serif;
   background: #0a0f1a;
-  color: white;
+  color: #ffffff;
   scroll-behavior: smooth;
 }
 
-/* REVEAL ANIMATION */
+/* ===== SECTION BASE ===== */
+.section {
+  padding: 80px 20px;
+}
+
+/* ===== HEADINGS ===== */
+h2 {
+  color: #00e5ff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* ===== GRID SYSTEM ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===== CARD STYLE (GLASS + GLOW) ===== */
+.card,
+.skill-card,
+.project-card,
+.cert-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  padding: 20px;
+  border-radius: 14px;
+  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+/* HOVER EFFECT */
+.card:hover,
+.skill-card:hover,
+.project-card:hover,
+.cert-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 25px #00e5ff;
+  border-color: #00e5ff;
+}
+
+/* ===== SKILL CARD TEXT ===== */
+.skill-card {
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-card h3 {
+  color: #00ff88;
+  margin-bottom: 10px;
+}
+
+/* ===== CERT CARD ===== */
+.cert-card {
+  text-align: center;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #00ff88;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff;
+}
+
+/* ===== REVEAL ANIMATION ===== */
 .reveal {
   opacity: 0;
-  transform: translateY(60px);
-  transition: 0.8s ease;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* CARDS */
-.card, .skill-card, .project-card, .cert-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid #00e5ff;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.card:hover, .skill-card:hover, .project-card:hover, .cert-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px #00e5ff;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-/* HEADINGS */
-h2 {
-  color: #00e5ff;
-}
-
-/* LINKS */
-a {
-  color: #00ff88;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #00e5ff;
 }
